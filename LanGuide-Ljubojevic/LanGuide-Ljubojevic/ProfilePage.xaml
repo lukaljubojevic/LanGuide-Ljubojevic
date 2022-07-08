@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="LanGuide_Ljubojevic.ProfilePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image x:Name="LogoImage" Source="Logo.png" HorizontalOptions="FillAndExpand" BackgroundColor="#029788"/>
+            <Label Text="Profile" TextColor="Black" FontSize="24" HorizontalTextAlignment="Center" Margin="0,20"/>
+            <Label Text="Name:" Margin="20,0,20,0" TextColor="#029788" />
+            <Label x:Name="NameLabel" Text="{Binding Name}" Margin="20,0,20,0" TextColor="Black"/>
+            <Label Text="Surname:" Margin="20,0,20,0" TextColor="#029788"/>
+            <Label x:Name="SurnameLabel" Text="{Binding Surname}" Margin="20,0,20,0" TextColor="Black"/>
+            <Label Text="Email:" Margin="20,0,20,0" TextColor="#029788"/>
+            <Label x:Name="EmailLabel" Text="{Binding Email}" Margin="20,0,20,0" TextColor="Black"/>
+            <Label Text="Address:" Margin="20,0,20,0" TextColor="#029788" />
+            <Label x:Name="AddressLabel" Text="{Binding Address}" Margin="20,0,20,0" TextColor="Black"/>
+            <maps:Map x:Name="AddressMap" MapType="Street" MapClicked="Map_MapClicked" Margin="20,20"></maps:Map>
+            <Label Text="Click on map to show your address!" Margin="20,0,20,20"></Label>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    
+    
+    
+    
+    

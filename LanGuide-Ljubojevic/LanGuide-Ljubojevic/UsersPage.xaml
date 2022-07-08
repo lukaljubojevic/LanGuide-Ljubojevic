@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LanGuide_Ljubojevic.UsersPage"
+             xmlns:local="clr-namespace:LanGuide_Ljubojevic">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#e5e5e5" Spacing="0">
+            <Image x:Name="LogoImage" Source="Logo.png" BackgroundColor="#029788"/>
+            <Image x:Name="Users" Source="UsersLogo.png" BackgroundColor="#222d32" HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="CSVButton" Text="Download CSV" Clicked="CSVButton_Clicked" BackgroundColor="#f0ad4e" TextColor="White" Margin="20,20,20,0"/>
+            <Grid Margin="20,20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Show:" TextColor="Black" Margin="20,0"></Label>
+                <BoxView Grid.Row="0" Grid.ColumnSpan="3" BackgroundColor="White"  Margin="20,20,20,0"></BoxView>
+                <Label Grid.Column="0" VerticalOptions="Center" Grid.Row="0" Text="-" Margin="20,20,20,0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ShowAll_Tapped"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Grid.Column="1" VerticalOptions="Center" Grid.Row="0" Text="25" Margin="20,20,20,0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Show25_Tapped"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Grid.Column="2" VerticalOptions="Center" Grid.Row="0" Text="100" Margin="20,20,20,0" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Show100_Tapped"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+            <SearchBar x:Name="SearchMe" SearchButtonPressed="SearchBar_SearchButtonPressed"></SearchBar>
+            <Grid Margin="0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"  />
+                    <RowDefinition Height="2*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <BoxView Grid.Row="0" Grid.ColumnSpan="3" BackgroundColor="#029788"  Margin="20,20,20,0"></BoxView>
+                <Label Text="User ID"  Grid.Column="0" Margin="20,20,20,0" FontSize="Medium" FontAttributes="Bold" TextColor="White"  BackgroundColor="#029788" HorizontalOptions="Start" VerticalOptions="CenterAndExpand">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="UIDSort_Tapped"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                </Label>
+                <Label Text="E-mail" Grid.Column="1" Margin="20,20,20,0" FontSize="Medium" FontAttributes="Bold" TextColor="White"  BackgroundColor="#029788"  VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="EmailSort_Tapped"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="Time created" Grid.Column="2" Margin="20,20,20,0" FontSize="Medium" FontAttributes="Bold" TextColor="White"  BackgroundColor="#029788" HorizontalOptions="End" VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="DateSort_Tapped"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+                <ListView Grid.Row="1" Grid.ColumnSpan="3" x:Name="UsersListView" RowHeight="120" Margin="20,0,20,20" Background="White">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Spacing="8">
+                                    <Label Grid.Column="0" Text="{Binding id_user}" TextColor="#000" FontSize="14"  HorizontalOptions="StartAndExpand"    />
+                                    <Label Grid.Column="1" Text="{Binding email}" TextColor="#000" FontSize="14" HorizontalOptions="CenterAndExpand"  />
+                                    <Label Grid.Column="2" Text="{Binding create_time}" TextColor="#000" FontSize="14"  HorizontalOptions="EndAndExpand" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

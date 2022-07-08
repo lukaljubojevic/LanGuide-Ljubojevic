@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LanGuide_Ljubojevic.LanguagesPage"
+             xmlns:local="clr-namespace:LanGuide_Ljubojevic">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#e5e5e5" Spacing="0">
+            <Image x:Name="LogoImage" Source="Logo.png" BackgroundColor="#029788"/>
+            <Image x:Name="LanguagesImage" Source="LanguagesLogo.png" BackgroundColor="#222d32" HorizontalOptions="FillAndExpand"/>
+            <Grid Margin="0,0
+                  ">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"  />
+                    <RowDefinition Height="2*" />
+                </Grid.RowDefinitions>
+                <BoxView Grid.Row="0" BackgroundColor="#029788" Grid.ColumnSpan="2" Margin="20,20,20,0"></BoxView>
+                <Label Text="Languages:" Margin="20,20,20,0" FontSize="Large" FontAttributes="Bold" TextColor="White"  BackgroundColor="#029788" HorizontalOptions="Center" VerticalOptions="Center" />
+                <ListView Grid.Row="1" Margin="20,0,20,20" Grid.ColumnSpan="2" ItemsSource="{x:Static local:LanguagesPage.Languages}" BackgroundColor="White">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell TextColor="Black" Text="{Binding .}"></TextCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

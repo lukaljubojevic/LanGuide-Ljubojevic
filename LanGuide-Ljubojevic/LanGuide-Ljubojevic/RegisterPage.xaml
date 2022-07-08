@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LanGuide_Ljubojevic.RegisterPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- All items must be required -->
+            <Image x:Name="LogoImage" Source="Logo.png" HorizontalOptions="FillAndExpand" BackgroundColor="#029788"/>
+            <Label Text="Register" TextColor="Black" FontSize="24" HorizontalTextAlignment="Center" Margin="0,20"/>
+            <Label Text="Name:" Margin="20,0,20,0" TextColor="#029788" />
+            <Entry x:Name="NameEntry" Margin="20,0,20,0" Placeholder="John" TextColor="Black"/>
+            <Label Text="Surname:" Margin="20,0,20,0" TextColor="#029788"/>
+            <Entry x:Name="SurnameEntry" Margin="20,0,20,0" Placeholder="Doe" TextColor="Black"/>
+            <Label Text="Email:" Margin="20,0,20,0" TextColor="#029788"/>
+            <Entry x:Name="EmailEntry" Keyboard="Email" Margin="20,0,20,0" TextColor="Black" Placeholder="john.doe@mail.com"/>
+            <Label Text="Password:" Margin="20,0,20,0" TextColor="#029788"/>
+            <Entry x:Name="PassEntry" IsPassword="True" Margin="20,0,20,0" TextColor="Black"/>
+            <Label Text="Repeat password:" Margin="20,0,20,0" TextColor="#029788"/>
+            <Entry x:Name="RePassEntry" IsPassword="True" Margin="20,0,20,0" TextColor="Black"/>
+            <Label Text="Address:" Margin="20,0,20,0" TextColor="#029788" />
+            <Entry x:Name="AddressEntry" Margin="20,0,20,0" TextColor="Black" Placeholder="Tihovac 1, 51000, Rijeka"/>
+            <Button x:Name="RegisterButton" Text="Register" BackgroundColor="#029788" TextColor="White" Margin="20,0,20,0" Clicked="RegisterButton_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
